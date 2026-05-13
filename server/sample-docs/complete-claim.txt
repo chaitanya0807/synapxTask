@@ -1,0 +1,18 @@
+FNOL Claim Report
+
+Policy Number: AC-123456789
+Policyholder Name: John A. Smith
+Effective Start Date: 01/01/2024
+Effective End Date: 01/01/2025
+Incident Date: 03/15/2024
+Incident Time: 14:30
+Incident Location: 123 Main St, Springfield, IL 62704
+Incident Description: Vehicle was rear-ended at a stoplight by a third party while stopped at a red light. The impact caused damage to the rear bumper and trunk area.
+Claimant Name: John A. Smith
+Third Parties: Jane Doe
+Contact Details: (555) 123-4567, john.smith@email.com
+Asset Type: Automobile
+Asset ID: VIN-1HGBH41JXMN109186
+Estimated Damage: 15000
+Claim Type: Property Damage
+Initial Estimate: 14500

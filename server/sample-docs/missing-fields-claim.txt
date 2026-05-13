@@ -1,0 +1,18 @@
+FNOL Claim Report
+
+Policy Number: 
+Policyholder Name: John A. Smith
+Effective Start Date: 01/01/2024
+Effective End Date: 01/01/2025
+Incident Date: 
+Incident Time: 14:30
+Incident Location: 456 Oak Ave, Decatur, IL 62521
+Incident Description: Vehicle sideswiped by another driver while changing lanes on the highway. Damage to the driver side door and front fender.
+Claimant Name: John A. Smith
+Third Parties: Mike Johnson
+Contact Details: (555) 987-6543, j.smith@email.com
+Asset Type: Automobile
+Asset ID: VIN-2T1BURHE4JC000123
+Estimated Damage: 8500
+Claim Type: Property Damage
+Initial Estimate: 8200
