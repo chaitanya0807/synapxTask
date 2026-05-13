@@ -39,7 +39,8 @@ function App() {
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/process-claim`,
-        formData
+        formData,
+        { timeout: 120000 }
       );
       setResult(data);
     } catch (err: any) {
