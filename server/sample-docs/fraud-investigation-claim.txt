@@ -1,0 +1,19 @@
+FNOL Claim Report
+
+Policy Number: HLT-987654321
+Policyholder Name: Sarah M. Johnson
+Effective Start Date: 06/15/2023
+Effective End Date: 06/15/2024
+Incident Date: 11/20/2023
+Incident Time: 09:15
+Incident Location: 789 Elm St, Portland, OR 97201
+Incident Description: Claimant reports suspicious activity. The incident appears to be staged with inconsistent witness statements and possible fraud indicators.
+Claimant Name: Sarah M. Johnson
+Third Parties: Robert Williams, Tina Alvarez
+Contact Details: (503) 555-8901, sarah.j@email.com
+Asset Type: Commercial Property
+Asset ID: PROP-55677890
+Estimated Damage: 45000
+Claim Type: Property Damage
+Attachments: police_report.pdf, photos.zip
+Initial Estimate: 42000

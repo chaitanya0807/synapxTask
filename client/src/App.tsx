@@ -8,6 +8,7 @@ type ClaimResult = {
   missingFields: string[];
   recommendedRoute: "fast-track" | "manual-review" | "investigation-flag" | "specialist-queue";
   reasoning: string;
+  attachments?: string[];
 };
 
 const STATUS_MESSAGES = [

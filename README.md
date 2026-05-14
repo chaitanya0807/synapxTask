@@ -106,6 +106,7 @@ Upload a PDF or TXT file for FNOL processing.
     "assetId": "string | null",
     "estimatedDamage": "number | null",
     "claimType": "string | null",
+    "attachments": ["string"],
     "initialEstimate": "number | null"
   },
   "missingFields": ["string"],
@@ -142,6 +143,7 @@ Returns `{ "status": "ok" }`
     "assetId": "VIN-1HGBH41JXMN109186",
     "estimatedDamage": 15000,
     "claimType": "Property Damage",
+    "attachments": ["police_report.pdf"],
     "initialEstimate": 14500
   },
   "missingFields": [],
@@ -169,7 +171,9 @@ synapx/
 │   │   └── routing_engine.py    # Rule-based claim routing
 │   └── sample-docs/
 │       ├── complete-claim.txt
-│       └── missing-fields-claim.txt
+│       ├── missing-fields-claim.txt
+│       ├── fraud-investigation-claim.txt
+│       └── injury-specialist-claim.txt
 └── client/
     ├── .env                      # VITE_API_URL
     ├── package.json

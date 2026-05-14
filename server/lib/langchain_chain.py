@@ -23,6 +23,7 @@ class ClaimSchema(BaseModel):
     assetId: Optional[str] = None
     estimatedDamage: Optional[float] = None
     claimType: Optional[str] = None
+    attachments: list[str] = []
     initialEstimate: Optional[float] = None
 
 
