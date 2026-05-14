@@ -60,8 +60,11 @@ cd ../client && npm install
 # Create client/.env
 # Add: VITE_API_URL=http://localhost:3001
 
-# Run both servers from root
-cd .. && npm run dev
+# Start server (terminal 1)
+cd server && python -m uvicorn main:app --reload --port 3001
+
+# Start client (terminal 2)
+cd client && npm run dev
 ```
 
 ## Routing Logic
@@ -151,7 +154,6 @@ Returns `{ "status": "ok" }`
 
 ```
 synapx/
-├── package.json                  # Root scripts (dev, dev:server, dev:client)
 ├── README.md
 ├── ACORD-Automobile-Loss-Notice-12.05.16.pdf
 ├── Assessment_Brief_Synapx.pdf
