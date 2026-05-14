@@ -66,7 +66,7 @@ function App() {
           <h1 className="text-xl font-bold">FNOL Intelligence Agent</h1>
         </div>
         <div className="flex gap-2">
-          {["React", "Node", "LangChain", "Gemini"].map((tech) => (
+          {["React", "Python", "LangChain", "Gemini"].map((tech) => (
             <span key={tech} className="bg-gray-800 text-xs px-2 py-1 rounded-full text-gray-400">{tech}</span>
           ))}
         </div>
