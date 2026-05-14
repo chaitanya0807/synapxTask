@@ -10,11 +10,11 @@ FNOL Intelligence Agent automates First Notice of Loss claim processing by extra
 |-------|-----------|---------|
 | Frontend | React + Vite + TypeScript | Upload UI, result display, loading states |
 | Styling | Tailwind CSS | Dark-themed responsive layout |
-| Backend | Node.js + Express (CommonJS) | REST API, file upload, orchestration |
-| File Upload | Multer | In-memory PDF/TXT handling (10MB max) |
-| PDF Parsing | pdf-parse | Text extraction from PDF buffers |
+| Backend | Python + FastAPI | REST API, file upload, orchestration |
+| File Upload | python-multipart | In-memory PDF/TXT handling (10MB max) |
+| PDF Parsing | pdfplumber | Text extraction from PDF buffers |
 | AI Extraction | LangChain + Gemini 2.5 Flash | Structured FNOL field extraction |
-| Schema Validation | Zod | Claim schema definition & output parsing |
+| Schema Validation | Pydantic | Claim schema definition & output parsing |
 | Routing | Custom engine | Rule-based claim routing |
 
 ## Architecture
@@ -22,7 +22,7 @@ FNOL Intelligence Agent automates First Notice of Loss claim processing by extra
 ```
 ┌──────────────┐     POST /api/process-claim      ┌──────────────┐
 │              │  ─────────────────────────────▶   │              │
-│   React UI   │       (multipart/form-data)       │   Express    │
+│   React UI   │       (multipart/form-data)       │   FastAPI    │
 │  (Vite:5173) │                                   │  (Port:3001) │
 │              │  ◀─────────────────────────────   │              │
 └──────────────┘     JSON response                └──────┬───────┘
@@ -30,7 +30,7 @@ FNOL Intelligence Agent automates First Notice of Loss claim processing by extra
                                     ┌────────────────┼────────────────┐
                                     ▼                ▼                ▼
                              ┌──────────┐    ┌──────────────┐  ┌───────────┐
-                             │ pdfParse │    │  LangChain   │  │ Routing   │
+                             │pdfplumber│    │  LangChain   │  │ Routing   │
                              │  (text)  │    │ + Gemini 2.5 │  │  Engine   │
                              └────┬─────┘    │   Flash      │  └───────────┘
                                   │          └──────┬───────┘
@@ -48,17 +48,17 @@ git clone <repo-url>
 cd fnol-agent
 
 # Install server dependencies
-cd server && npm install
+cd server && pip install -r requirements.txt
 
 # Install client dependencies
 cd ../client && npm install
 
 # Create server/.env
-echo "GOOGLE_API_KEY=your_gemini_api_key" > server/.env
-echo "PORT=3001" >> server/.env
+# Add: GOOGLE_API_KEY=your_gemini_api_key
+# Add: PORT=3001
 
 # Create client/.env
-echo "VITE_API_URL=http://localhost:3001" > client/.env
+# Add: VITE_API_URL=http://localhost:3001
 
 # Run both servers from root
 cd .. && npm run dev
@@ -157,14 +157,14 @@ synapx/
 ├── Assessment_Brief_Synapx.pdf
 ├── server/
 │   ├── .env                      # GOOGLE_API_KEY, PORT
-│   ├── package.json
-│   ├── index.js                  # Express entry point
+│   ├── requirements.txt
+│   ├── main.py                   # FastAPI entry point
 │   ├── routes/
-│   │   └── claims.js             # POST /process-claim, GET /health
+│   │   └── claims.py             # POST /process-claim, GET /health
 │   ├── lib/
-│   │   ├── pdfParser.js          # PDF/TXT text extraction
-│   │   ├── langchainChain.js     # Gemini 2.5 Flash + Zod structured output
-│   │   └── routingEngine.js      # Rule-based claim routing
+│   │   ├── pdf_parser.py         # PDF/TXT text extraction
+│   │   ├── langchain_chain.py   # Gemini 2.5 Flash + Pydantic structured output
+│   │   └── routing_engine.py    # Rule-based claim routing
 │   └── sample-docs/
 │       ├── complete-claim.txt
 │       └── missing-fields-claim.txt

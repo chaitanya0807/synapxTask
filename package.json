@@ -1,7 +1,7 @@
 {
   "name": "synapx",
   "scripts": {
-    "dev:server": "node server/index.js",
+    "dev:server": "cd server && python -m uvicorn main:app --reload --port 3001",
     "dev:client": "cd client && npm run dev",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
   },
